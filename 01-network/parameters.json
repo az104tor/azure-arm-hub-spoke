@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualNetworks_HubVnet_name": {
+            "value": null
+        },
+        "virtualNetworks_Spoke1Vnet_name": {
+            "value": null
+        },
+        "virtualNetworks_Spoke2Vnet_name": {
+            "value": null
+        }
+    }
+}
