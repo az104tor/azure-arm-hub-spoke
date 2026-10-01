@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure VM Web Server Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f3f2f1;
+            color: #323130;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            border-top: 8px solid #0078d4; /* Azure Blue */
+        }
+        .badge {
+            background-color: #dff6dd;
+            color: #107c41;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 6px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            color: #0078d4;
+            font-size: 1.8rem;
+        }
+        p {
+            color: #605e5c;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .meta-table th, .meta-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #edebe9;
+        }
+        .meta-table th {
+            color: #323130;
+            font-weight: 600;
+            width: 40%;
+        }
+        .meta-table td {
+            color: #605e5c;
+            font-family: monospace;
+            background: #faf9f8;
+            border-radius: 4px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #a19f9d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="badge">✓ Connection Successful</div>
+        <h1>Azure iLinux VM Web Server</h1>
+        <p>If you can see this page, your Azure Firewall Policy is working properly.</p>
+        
+        <table class="meta-table">
+            <tr>
+                <th>Status:</th>
+                <td style="color: #107c41; font-weight: bold;">ONLINE</td>
+            </tr>
+            <tr>
+                <th>Test Protocol:</th>
+                <div id="protocol-container"><td>HTTP / Port 80</td></div>
+            </tr>
+            <tr>
+                <th>Timestamp:</th>
+                <td id="time">Loading...</td>
+            </tr>
+        </table>
+
+        <div class="footer">
+            Hosted on Microsoft Azure Virtual Machine
+        </div>
+    </div>
+
+    <script>
+        // Dynamically show the exact loading timestamp
+        document.getElementById('time').innerText = new Date().toUTCString();
+        
+        // Quick check to display if connection is secure
+        if (window.location.protocol === 'https:') {
+            document.getElementById('protocol-container').innerHTML = '<td>HTTPS / Port 443</td>';
+        }
+    </script>
+</body>
+</html>
