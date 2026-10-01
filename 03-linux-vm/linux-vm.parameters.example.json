@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "westeurope"
+    },
+    "vmName": {
+      "value": "linuxserver"
+    },
+    "adminUsername": {
+      "value": "azureuser"
+    },
+    "adminPassword": {
+      "value": "REPLACE-WITH-STRONG-PASSWORD"
+    },
+    "vnetName": {
+      "value": "Spoke2Vnet"
+    },
+    "subnetName": {
+      "value": "SubnetSpoke2"
+    },
+    "allowedSourceAddressPrefix": {
+      "value": "YOUR.PUBLIC.IP.ADDRESS/32"
+    },
+    "vmSize": {
+      "value": "Standard_B2s"
+    }
+  }
+}
